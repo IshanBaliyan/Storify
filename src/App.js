@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline } from '@material-ui/core';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 
 import { Navbar, Products, Cart, Checkout } from './components';
 import { commerce } from './lib/commerce';
@@ -76,17 +76,11 @@ const App = () => {
       <div style={{ display: 'flex' }}>
         <CssBaseline />
         <Navbar totalItems={cart.total_items} handleDrawerToggle={handleDrawerToggle} />
-        <Switch>
-          <Route exact path="/">
-            <Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />
-          </Route>
-          <Route exact path="/cart">
-            <Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />
-          </Route>
-          <Route path="/checkout" exact>
-            <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path='/' element={<Products products={products} onAddToCart={handleAddToCart} handleUpdateCartQty />} />
+          <Route path='/cart' element={<Cart cart={cart} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} onEmptyCart={handleEmptyCart} />} />
+          <Route path='/checkout' element={<Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} />} />
+        </Routes>
       </div>
     </Router>
   );
