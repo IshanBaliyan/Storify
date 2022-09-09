@@ -1,8 +1,8 @@
 # Welcome to Storify
 
-Storify combines an integrated warehouse storage system with ecommerce for easy mobility and accessibility.
+# DEMO: https://thestorify.netlify.app/.
 
-Visit the deployed website at https://thestorify.netlify.app/.
+Storify combines an integrated warehouse storage system with ecommerce for easy mobility and accessibility.
 
 UI design:
 ![image](https://user-images.githubusercontent.com/43831507/152910059-064afc43-63e4-470b-a0d3-32253d84a721.png)
